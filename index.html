@@ -50,10 +50,10 @@
   /* Display a blue point marker with pop-up text */
   // L.marker([48.7758, 9.1829]).addTo(map) // EDIT latitude, longitude to re-position marker
   // .bindPopup("Insert pop-up text here"); // EDIT pop-up text message
-  /* Upload Latitude/Longitude markers from data.csv file, show Title in pop-up, and override initial center and zoom to fit all in map */
+  /* Upload Latitude/Longitude markers from data.csv file, show Operator in pop-up, and override initial center and zoom to fit all in map */
   var customLayer = L.geoJson(null, {
    onEachFeature: function(feature, layer) {
-     layer.bindPopup(feature.properties.Title);
+     layer.bindPopup(feature.properties.Operator);
     }
    });
    var runLayer = omnivore.csv('sample_berlin_EV_chargers_proc.csv', null, customLayer)
