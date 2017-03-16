@@ -21,14 +21,14 @@
 <body>
 
   <!-- Display the map and title with HTML division tags  -->
-  <div id="map-title">Stuttgart Landmarks</div>
+  <div id="map-title">Berlin sample of EV charging stations</div>
   <div id="map"></div>
 
   <!-- Create the map content with JavaScript (.js) -->
   <script>
   /* Set up the map with initial center and zoom level */
   var map = L.map('map', {
-    center: [48.7758, 9.1829], // EDIT latitude, longitude to re-center map
+    center: [52.5200, 13.4050], // EDIT latitude, longitude to re-center map
     zoom: 7,  // EDIT from 1 to 18 -- decrease to zoom out, increase to zoom in
     scrollWheelZoom: false
   });
@@ -56,7 +56,7 @@
      layer.bindPopup(feature.properties.Title);
     }
    });
-   var runLayer = omnivore.csv('stuttgart-location.csv', null, customLayer)
+   var runLayer = omnivore.csv('sample_berlin_EV_chargers_proc.csv', null, customLayer)
    .on('ready', function() {
     map.fitBounds(runLayer.getBounds());
    }).addTo(map);
